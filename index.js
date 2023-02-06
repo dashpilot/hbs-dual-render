@@ -18,3 +18,4 @@ async function render() {
 
   fs.writeFileSync("./public/index.html", result, "utf-8");
 }
+render();
