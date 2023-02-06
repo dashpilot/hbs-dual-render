@@ -2,7 +2,7 @@ const Handlebars = require("handlebars");
 const fs = require("fs");
 const path = require("path");
 
-module.exports = async (request, response) => {
+module.exports = async (req, res) => {
   var file = path.join(process.cwd(), "src", "home.hbs");
   var source = fs.readFileSync(file, "utf8");
 
