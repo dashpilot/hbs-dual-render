@@ -3,10 +3,10 @@ const fs = require("fs");
 const path = require("path");
 
 async function render() {
-  const res = await fetch(
+  const result = await fetch(
     "https://api.eu-central-1.linodeobjects.com/test/data.json"
   );
-  var data = await res.json();
+  var data = await result.json();
 
   var file = path.join(process.cwd(), "src", "home.hbs");
   var source = fs.readFileSync(file, "utf-8");
