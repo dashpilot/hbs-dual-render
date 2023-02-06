@@ -2,7 +2,9 @@ const Handlebars = require("handlebars");
 const fs = require("fs");
 const path = require("path");
 
-var source = fs.readFileSync("./src/home.hbs", "utf-8");
+var file = path.join(process.cwd(), "src", "home.hbs");
+var source = fs.readFileSync(file, "utf-8");
+
 var template = Handlebars.compile(source);
 
 var data = {
