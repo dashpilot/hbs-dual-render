@@ -2,13 +2,15 @@ const Handlebars = require("handlebars");
 const fs = require("fs");
 const path = require("path");
 
+// Handlebars.registerPartial("home");
+
 async function render() {
   const resp = await fetch(
     "https://api.eu-central-1.linodeobjects.com/test/data.json"
   );
   var data = await resp.json();
 
-  var file = path.join(process.cwd(), "src", "home.hbs");
+  var file = path.join(process.cwd(), "src", "layout.hbs");
   var source = fs.readFileSync(file, "utf-8");
 
   var template = Handlebars.compile(source);
