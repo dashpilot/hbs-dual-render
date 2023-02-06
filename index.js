@@ -23,7 +23,7 @@ async function render() {
 
   fs.writeFileSync("./public/index.html", result, "utf-8");
 
-  fs.writeFileSync("./public/tpl/layout.hbs", source, "utf-8");
-  fs.writeFileSync("./public/tpl/main.hbs", main, "utf-8");
+  fs.writeFileSync("./public/tpl/layout.html", source, "utf-8");
+  fs.writeFileSync("./public/tpl/main.html", main, "utf-8");
 }
 render();
