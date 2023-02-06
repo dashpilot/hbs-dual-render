@@ -19,6 +19,7 @@ async function render() {
   var result = template(data);
 
   fs.mkdirSync("./public");
+  fs.mkdirSync("./public/_src");
 
   fs.writeFileSync("./public/index.html", result, "utf-8");
 
