@@ -10,4 +10,4 @@ var data = {
 };
 var result = template(data);
 
-console.log(result);
+fs.writeFileSync("./public/index.html", result, "utf-8");

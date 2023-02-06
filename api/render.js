@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = async (req, res) => {
   var file = path.join(process.cwd(), "src", "home.hbs");
-  var source = fs.readFileSync(file, "utf8");
+  var source = fs.readFileSync(file, "utf-8");
 
   var template = Handlebars.compile(source);
 
