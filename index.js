@@ -19,11 +19,11 @@ async function render() {
   var result = template(data);
 
   fs.mkdirSync("./public");
-  fs.mkdirSync("./public/_src");
+  fs.mkdirSync("./public/tpl");
 
   fs.writeFileSync("./public/index.html", result, "utf-8");
 
-  fs.writeFileSync("./public/_src/layout.hbs", source, "utf-8");
-  fs.writeFileSync("./public/_src/main.hbs", main, "utf-8");
+  fs.writeFileSync("./public/tpl/layout.hbs", source, "utf-8");
+  fs.writeFileSync("./public/tpl/main.hbs", main, "utf-8");
 }
 render();
