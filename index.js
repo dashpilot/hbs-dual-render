@@ -2,7 +2,9 @@ const Handlebars = require("handlebars");
 const fs = require("fs");
 const path = require("path");
 
-// Handlebars.registerPartial("home");
+var partialPath = path.join(process.cwd(), "src", "home.hbs");
+var partial = fs.readFileSync(partialPath, "utf-8");
+Handlebars.registerPartial("home", partial);
 
 async function render() {
   const resp = await fetch(
