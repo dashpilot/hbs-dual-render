@@ -8,7 +8,7 @@ async function render() {
   );
   var data = await resp.json();
 
-  var partialPath = path.join(process.cwd(), "src", "home.hbs");
+  var partialPath = path.join(process.cwd(), "src", "main.hbs");
   var main = fs.readFileSync(partialPath, "utf-8");
   Handlebars.registerPartial("main", main);
 
