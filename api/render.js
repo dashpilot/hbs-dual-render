@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
   );
   var data = await resp.json();
 
-  var file = path.join(process.cwd(), "src", "home.hbs");
+  var file = path.join(process.cwd(), "src", "main.hbs");
   var source = fs.readFileSync(file, "utf-8");
 
   var template = Handlebars.compile(source);
