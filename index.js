@@ -10,4 +10,6 @@ var data = {
 };
 var result = template(data);
 
+fs.mkdirSync("./public");
+
 fs.writeFileSync("./public/index.html", result, "utf-8");
