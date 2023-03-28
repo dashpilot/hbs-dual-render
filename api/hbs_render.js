@@ -10,6 +10,13 @@ async function hbs_render(category) {
 
   data.posts = data.posts.filter((x) => x.category == category);
 
+  Handlebars.registerHelper("ifEq", function (v1, v2, options) {
+    if (v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
   var partialPath = path.join(process.cwd(), "src", "main.hbs");
   var main = fs.readFileSync(partialPath, "utf-8");
   Handlebars.registerPartial("main", main);

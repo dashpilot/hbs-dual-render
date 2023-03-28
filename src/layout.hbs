@@ -31,9 +31,13 @@
     
     <nav>
       
-      <a href="./">Home</a>
-      <a href="./about">About</a>
-      <a href="./contact">Contact</a>
+      {{#each categories}}
+        {{#ifEq slug 'home'}}
+        <a href="./">{{title}}</a>
+        {{else}}
+        <a href="./{{slug}}">{{title}}</a>
+        {{/ifEq}}
+      {{/each}}
       
     </nav>
     

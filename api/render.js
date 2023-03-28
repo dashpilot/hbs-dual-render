@@ -1,7 +1,7 @@
 const { hbs_render } = require("./hbs_render");
 
 module.exports = async (req, res) => {
-  console.log(req.headers["x-forwarded-host"]);
+  // console.log(req.headers["x-forwarded-host"]);
 
   const category = req.query.category;
   if (category == "") {
