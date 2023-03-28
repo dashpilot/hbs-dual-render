@@ -1,8 +1,8 @@
 const fs = require("fs");
-const { render } = require("./render");
+const { hbs_render } = require("./render");
 
 async function prerender() {
-  const result = await render();
+  const result = await hbs_render();
 
   fs.mkdirSync("./public");
   fs.mkdirSync("./public/tpl");

@@ -2,7 +2,7 @@ const Handlebars = require("handlebars");
 const fs = require("fs");
 const path = require("path");
 
-async function render() {
+async function hbs_render() {
   const resp = await fetch(
     "https://api.eu-central-1.linodeobjects.com/test/data.json"
   );
@@ -22,4 +22,4 @@ async function render() {
 }
 // render();
 
-module.exports = { render };
+module.exports = { hbs_render };
