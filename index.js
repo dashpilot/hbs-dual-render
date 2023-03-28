@@ -2,7 +2,7 @@ const fs = require("fs");
 const { hbs_render } = require("./api/hbs_render");
 
 async function prerender() {
-  const result = await hbs_render();
+  const result = await hbs_render("home");
 
   fs.mkdirSync("./public");
   fs.mkdirSync("./public/tpl");
