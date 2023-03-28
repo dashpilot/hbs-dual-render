@@ -1,7 +1,7 @@
 const { hbs_render } = require("./hbs_render");
 
 module.exports = async (req, res) => {
-  const category = request.query.category;
+  const category = req.query.category;
   if (category == "") {
     category = "home";
   }
