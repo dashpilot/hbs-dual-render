@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/api/:category", "destination": "/api/render" }]
+}
