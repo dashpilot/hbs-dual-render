@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { hbs_render } = require("./render");
+const { hbs_render } = require("./hbs_render");
 
 async function prerender() {
   const result = await hbs_render();
