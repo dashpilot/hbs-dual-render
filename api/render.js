@@ -1,13 +1,13 @@
 const { compile } = require("./../lib/hbs_compile");
 
 module.exports = async (req, res) => {
-  console.log(req.headers);
+  if (req.headers["sec-fetch-dest"] == "iframe") {
+    const category = req.query.category;
+    if (category == "") {
+      category = "home";
+    }
+    const result = await compile(category, true);
 
-  const category = req.query.category;
-  if (category == "") {
-    category = "home";
+    res.send(result);
   }
-  const result = await compile(category, true);
-
-  res.send(result);
 };
