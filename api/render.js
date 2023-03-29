@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
       </head
       <body>
         <div class="container mt-5 text-center">
-        <h1>403 Forbidden</h1>
+        <h1>Error 403 - Forbidden</h1>
         </div>
       </body>
       </html>`);
