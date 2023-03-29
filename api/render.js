@@ -1,4 +1,4 @@
-const { compile } = require("./_hbs_render");
+const { compile } = require("./_hbs_compile");
 
 module.exports = async (req, res) => {
   // console.log(req.headers["x-forwarded-host"]);

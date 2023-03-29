@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { compile } = require("./../api/_hbs_render");
+const { compile } = require("./../api/_hbs_compile");
 
 async function prerender() {
   // var result = await precompile();
