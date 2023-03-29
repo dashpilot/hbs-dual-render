@@ -2,12 +2,13 @@ const Handlebars = require("handlebars");
 const fs = require("fs");
 const path = require("path");
 
-async function hbs_render(category) {
+async function hbs_render(category, ssr = false) {
   const resp = await fetch(
     "https://api.eu-central-1.linodeobjects.com/test/data.json"
   );
   var data = await resp.json();
 
+  data.ssr = ssr;
   data.posts = data.posts.filter((x) => x.category == category);
 
   Handlebars.registerHelper("ifEq", function (v1, v2, options) {

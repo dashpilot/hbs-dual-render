@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   if (category == "") {
     category = "home";
   }
-  const result = await hbs_render(category);
+  const result = await hbs_render(category, true);
 
   res.send(result);
 };
