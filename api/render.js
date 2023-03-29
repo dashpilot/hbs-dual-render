@@ -9,5 +9,7 @@ module.exports = async (req, res) => {
     const result = await compile(category, true);
 
     res.send(result);
+  } else {
+    res.status(403).render();
   }
 };
