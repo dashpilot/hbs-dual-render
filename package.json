@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node run/precompile.js && node run/compile.js"
+    "build": "node lib/run_precompile.js && node lib/run_compile.js"
   },
   "author": "",
   "license": "ISC",
