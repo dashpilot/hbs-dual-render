@@ -30,24 +30,23 @@
   <body>
     
     <nav>
-     
-      {{#each categories}}
-        {{#ifEq slug 'home'}}
-        <a href="./">{{title}}</a>
-        {{else}}
-        <a href="./{{slug}}">{{title}}</a>
-        {{/ifEq}}
-      {{/each}}
       
+        <a href="./">Home</a>
+        <a href="./about">About</a>
+        <a href="./contact">Contact</a>
       
     </nav>
     
     <div class="container mt-5" id="page">
-    {{> main}}
+      <div class="editable" id="1">
+        <h2>This is some text yeah</h2>
+        <p>Lorem </p>
+      </div>
+      <div class="editable" id="2">
+        <h2>Sitefiction.</h2>
+        <p>Lorem ipsum dolor site amet</p>
+      </div>
     </div>
  
-    {{#if ssr}}
-    <script src="https://blogbird.vercel.app/relay.js"></script>
-    {{/if}}
   </body>
 </html>

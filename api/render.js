@@ -1,4 +1,4 @@
-const { hbs_render } = require("./hbs_render");
+const { compile } = require("./hbs_render");
 
 module.exports = async (req, res) => {
   // console.log(req.headers["x-forwarded-host"]);
@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   if (category == "") {
     category = "home";
   }
-  const result = await hbs_render(category, true);
+  const result = await compile(category, true);
 
   res.send(result);
 };

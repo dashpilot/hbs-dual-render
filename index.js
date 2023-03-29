@@ -1,18 +1,21 @@
 const fs = require("fs");
-const { hbs_render } = require("./api/hbs_render");
+const { precompile, compile } = require("./api/hbs_render");
 
 async function prerender() {
-  fs.mkdirSync("./public");
-  fs.mkdirSync("./public/tpl");
+  // var result = await precompile();
 
-  var result = await hbs_render("home");
+  if (!fs.existsSync("./public")) {
+    fs.mkdirSync("./public");
+  }
+
+  var result = await compile("home");
   fs.writeFileSync("./public/index.html", result, "utf-8");
 
-  var result = await hbs_render("about");
+  var result = await compile("about");
   fs.mkdirSync("./public/about");
   fs.writeFileSync("./public/about/index.html", result, "utf-8");
 
-  var result = await hbs_render("contact");
+  var result = await compile("contact");
   fs.mkdirSync("./public/contact");
   fs.writeFileSync("./public/contact/index.html", result, "utf-8");
 
