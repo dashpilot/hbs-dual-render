@@ -1,7 +1,7 @@
 //const Handlebars = require("handlebars");
 const Handlebars = require("handlebars/runtime");
-const hbstemplate = require("./../src/layout-compiled.js");
-const hbstemplate2 = require("./../src/main-compiled.js");
+const hbstemplate = require("./../compiled/layout.js");
+const hbstemplate2 = require("./../compiled/main.js");
 const fs = require("fs");
 const path = require("path");
 const { exec } = require("child_process");

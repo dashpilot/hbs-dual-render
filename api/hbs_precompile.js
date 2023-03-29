@@ -1,10 +1,15 @@
 //const Handlebars = require("handlebars");
 const Handlebars = require("handlebars/runtime");
 const { exec } = require("child_process");
+const fs = require("fs");
 
 async function precompile() {
+  if (!fs.existsSync("./compiled")) {
+    fs.mkdirSync("./compiled");
+  }
+
   exec(
-    "handlebars ./src/layout.hbs -f ./src/layout-compiled.js -c handlebars/runtime",
+    "handlebars ./src/layout.hbs -f ./compiled/layout.js -c handlebars/runtime",
     (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
@@ -17,7 +22,7 @@ async function precompile() {
       console.log(`stdout: ${stdout}`);
 
       exec(
-        "handlebars ./src/main.hbs -f ./src/main-compiled.js -c handlebars/runtime",
+        "handlebars ./src/main.hbs -f ./compiled/main.js -c handlebars/runtime",
         (error, stdout, stderr) => {
           if (error) {
             console.log(`error: ${error.message}`);
