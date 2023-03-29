@@ -4,8 +4,24 @@ const hbstemplate = require("./../src/layout-compiled.js");
 const hbstemplate2 = require("./../src/main-compiled.js");
 const fs = require("fs");
 const path = require("path");
+const { exec } = require("child_process");
 
 async function precompile() {
+  exec(
+    "handlebars ./src/main.hbs -f ./src/main-compiled.js -c handlebars/runtime",
+    (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    }
+  );
+
   /*
   Handlebars.registerHelper("ifEq", function (v1, v2, options) {
     if (v1 === v2) {
