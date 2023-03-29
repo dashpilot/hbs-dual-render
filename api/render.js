@@ -10,6 +10,6 @@ module.exports = async (req, res) => {
 
     res.send(result);
   } else {
-    res.status(403).render();
+    res.status(403).send(`<h1>403 Forbidden</h1>`);
   }
 };
